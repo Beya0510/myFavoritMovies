@@ -1,0 +1,28 @@
+﻿@page "/data"
+@using Favies.Component
+@using Favies.Services
+@using Favies.Component.Data
+
+@code {
+    public IEnumerable<object> Data { get; set; }
+}
+@inject GetMoviesService GetMoviesService
+
+<h3>Données de l'API</h3>
+
+@if (Data == null)
+{
+    <p>Chargement...</p>
+}
+else
+{
+    <ul>
+        @foreach (var item in Data)
+        {
+            <li>@item</li>
+        }
+    </ul>
+}
+
+<Data />
+
