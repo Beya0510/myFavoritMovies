@@ -1,0 +1,30 @@
+﻿@page "/authentication{action}"
+@inject HttpClient Http
+
+<RemoteAuthenticatorView Action="@action">
+    <LoggingIn>
+        <p>Logging in...</p>
+    </LoggingIn>
+    <LogIn>
+        <p>Log in</p>
+    </LogIn>
+    <LogOut>
+        <p>Log out</p>
+    </LogOut>
+    <LogOutCallback>
+        <p>Logging out...</p>
+    </LogOutCallback>
+    <LogInCallback>
+        <p>Logging in...</p>
+    </LogInCallback>
+    <LogInFailed>
+        <p>Log in failed</p>
+    </LogInFailed>
+    <LogOutFailed>
+        <p>Log out failed</p>
+    </LogOutFailed>
+
+@code{
+	[Parameter]
+	public string action { get; set; }
+}

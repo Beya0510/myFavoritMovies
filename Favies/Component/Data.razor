@@ -1,5 +1,6 @@
 @using Favies.Services
 @inject GetMoviesService GetMoviesService
+@inject FavoritesService FavoritesService
 
 <h3>Data from API</h3>
 
@@ -12,16 +13,38 @@ else
     <ul>
         @foreach (var item in data)
         {
-            <li>@item</li>
+            <li>
+                @item
+                <button @onclick="() => AddToFavorites(item)">Add to Favorites</button>
+                <button @onclick="() => RemoveFromFavorites(item)">Remove from Favorites</button>
+            </li>
         }
     </ul>
 }
+
+<h3>Favorites</h3>
+<ul>
+    @foreach (var favorite in FavoritesService.GetFavorites())
+    {
+        <li>@favorite</li>
+    }
+</ul>
 
 @code {
     private List<string>? data; // Déclarer comme nullable
 
     protected override async Task OnInitializedAsync()
     {
-        data = await GetMoviesService.GetMoviesAsync<List<string>>("https://www.omdbapi.com/?apikey=YOUR_API_KEY");
+        data = await ApiService.GetDataAsync<List<string>>("https://www.omdbapi.com/?apikey=YOUR_API_KEY&s=Inception");
+    }
+
+    private void AddToFavorites(string item)
+    {
+        FavoritesService.AddFavorite(item);
+    }
+
+    private void RemoveFromFavorites(string item)
+    {
+        FavoritesService.RemoveFavorite(item);
     }
 }

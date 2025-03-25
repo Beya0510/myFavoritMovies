@@ -1,10 +1,9 @@
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
+
 namespace Favies.Services
 {
-    using System.Net.Http;
-    using System.Text.Json;
-    using System.Threading.Tasks;
-
-
 
     public class GetMoviesService
     {
