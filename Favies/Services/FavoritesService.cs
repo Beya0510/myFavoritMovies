@@ -9,31 +9,32 @@ namespace Favies.Services
         
         public List<string> GetFavorites()
         {
-            return favorites;
+            return _favorites;
         }
-        public void AddFavorite(string favorite)
-        {
-            _favorites.Add(favorite);
-        }
+      //  public void AddFavorite(string favorite)
+      //  {
+      //      _favorites.Add(favorite);
+      //  }
         
         public void AddFavorite(string item)
         {
-            if (!favorites.Contains(item))
+            if (!_favorites.Contains(item))
             {
-                favorites.Add(item);
+                _favorites.Add(item);
             }
         }
-        public void RemoveFavorite(string favorite)
-        {
-            _favorites.Remove(favorite);
-        }
+        //public void RemoveFavorite(string favorite)
+        //{
+        //    _favorites.Remove(favorite);
+        //}
         
         public void RemoveFavorite(string item)
         {
-            if (favorites.Contains(item))
+            if (_favorites.Contains(item))
             {
-                favorites.Remove(item);
+                _favorites.Remove(item);
             }
         }
+        
     }
 }

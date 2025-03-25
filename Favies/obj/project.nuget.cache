@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "N3Eox0PTzIE=",
+  "dgSpecHash": "dKe0Ptz1kEE=",
   "success": true,
   "projectFilePath": "C:\\Git Repos\\myFavoritMovies\\Favies\\Favies.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.3\\microsoft.aspnetcore.authorization.9.0.3.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.3\\microsoft.aspnetcore.components.9.0.3.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\9.0.3\\microsoft.aspnetcore.components.analyzers.9.0.3.nupkg.sha512",
+    "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\5.0.10\\microsoft.aspnetcore.components.authorization.5.0.10.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\9.0.3\\microsoft.aspnetcore.components.forms.9.0.3.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.components.web\\9.0.3\\microsoft.aspnetcore.components.web.9.0.3.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\9.0.3\\microsoft.aspnetcore.components.webassembly.9.0.3.nupkg.sha512",
+    "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\5.0.10\\microsoft.aspnetcore.components.webassembly.authentication.5.0.10.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\9.0.3\\microsoft.aspnetcore.components.webassembly.devserver.9.0.3.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.aspnetcore.metadata\\9.0.3\\microsoft.aspnetcore.metadata.9.0.3.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.3\\microsoft.extensions.configuration.9.0.3.nupkg.sha512",

@@ -35,7 +35,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        data = await ApiService.GetDataAsync<List<string>>("https://www.omdbapi.com/?apikey=YOUR_API_KEY&s=Inception");
+        data = await GetMoviesService.GetMoviesAsync<List<string>>("https://www.omdbapi.com/?apikey=YOUR_API_KEY&s=Inception");
     }
 
     private void AddToFavorites(string item)

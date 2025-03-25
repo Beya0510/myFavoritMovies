@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 
 namespace Favies.Services
 {
-
     public class GetMoviesService
     {
         private readonly HttpClient _httpClient;
@@ -13,8 +12,7 @@ namespace Favies.Services
         {
             _httpClient = httpClient;
         }
-        
-        string url = "https://www.omdbapi.com/";
+
         public async Task<T?> GetMoviesAsync<T>(string url) where T : class
         {
             var response = await _httpClient.GetAsync(url);
@@ -23,4 +21,4 @@ namespace Favies.Services
             return JsonSerializer.Deserialize<T>(responseContent);
         }
     }
-}  
+}

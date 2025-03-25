@@ -1,30 +1,41 @@
 ﻿@page "/authentication{action}"
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using Favies.Services
 @inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject AuthenticationService AuthenticationService
 
 <RemoteAuthenticatorView Action="@action">
     <LoggingIn>
         <p>Logging in...</p>
     </LoggingIn>
-    <LogIn>
-        <p>Log in</p>
-    </LogIn>
-    <LogOut>
-        <p>Log out</p>
-    </LogOut>
-    <LogOutCallback>
-        <p>Logging out...</p>
-    </LogOutCallback>
-    <LogInCallback>
-        <p>Logging in...</p>
-    </LogInCallback>
+    <Registering>
+        <p>Registering...</p>
+    </Registering>
+    <UserProfile>
+        <p>User Profile</p>
+    </UserProfile>
+    <CompletingLoggingIn>
+        <p>Completing logging in...</p>
+    </CompletingLoggingIn>
     <LogInFailed>
         <p>Log in failed</p>
     </LogInFailed>
+    <LogOut>
+        <p>Log out</p>
+    </LogOut>
+    <CompletingLogOut>
+        <p>Completing log out...</p>
+    </CompletingLogOut>
     <LogOutFailed>
         <p>Log out failed</p>
     </LogOutFailed>
+    <LogOutSucceeded>
+        <p>Log out succeeded</p>
+    </LogOutSucceeded>
+</RemoteAuthenticatorView>
 
-@code{
-	[Parameter]
-	public string action { get; set; }
+@code {
+    [Parameter]
+    public string action { get; set; }
 }
