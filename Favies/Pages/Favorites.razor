@@ -1,0 +1,23 @@
+@page "/favorites"
+@using Favies.Services
+@inject FavoritesService FavoritesService
+
+    <h3>Favorites</h3>
+
+    @if (FavoritesService.GetFavorites().Count == 0)
+{
+    <p>No favorites added yet.</p>
+}
+else
+{
+    <ul>
+        @foreach (var favorite in FavoritesService.GetFavorites())
+    {
+        <li>@favorite</li>
+    }
+    </ul>
+}
+
+@code {
+    // Vous pouvez ajouter du code supplémentaire ici si nécessaire
+}

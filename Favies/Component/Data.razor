@@ -1,6 +1,8 @@
 @using Favies.Services
+@using Favies.Models
 @inject GetMoviesService GetMoviesService
 @inject FavoritesService FavoritesService
+
 
 <h3>Data from API</h3>
 
@@ -14,9 +16,9 @@ else
         @foreach (var item in data)
         {
             <li>
-                @item
-                <button @onclick="() => AddToFavorites(item)">Add to Favorites</button>
-                <button @onclick="() => RemoveFromFavorites(item)">Remove from Favorites</button>
+                @item.Title
+                <button @onclick="() => AddToFavorites(item.Title)">Add to Favorites</button>
+                <button @onclick="() => RemoveFromFavorites(item.Title)">Remove from Favorites</button>
             </li>
         }
     </ul>
@@ -31,11 +33,11 @@ else
 </ul>
 
 @code {
-    private List<string>? data; // Déclarer comme nullable
+    private List<Movie>? data; // Déclarer comme nullable
 
     protected override async Task OnInitializedAsync()
     {
-        data = await GetMoviesService.GetMoviesAsync<List<string>>("https://www.omdbapi.com/?apikey=YOUR_API_KEY&s=Inception");
+        data = (await GetMoviesService.GetMoviesAsync("Inception")).ToList(); // Conversion explicite en List<Movie>
     }
 
     private void AddToFavorites(string item)

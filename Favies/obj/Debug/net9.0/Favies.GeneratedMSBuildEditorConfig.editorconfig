@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGF0YURpc3BsYXkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Git Repos/myFavoritMovies/Favies/Pages/Favorites.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmF2b3JpdGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Git Repos/myFavoritMovies/Favies/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

@@ -22,7 +22,7 @@ namespace Favies.Services
             {
                 return token.Value;
             }
-            return null;
+            return string.Empty; // Utiliser une valeur par défaut appropriée
         }
 
         public async Task LogInAsync()
