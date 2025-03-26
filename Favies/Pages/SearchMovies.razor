@@ -39,7 +39,10 @@ else
     <InputText @bind-Value="favoriteToRemove" />  
     <button type="submit">Remove</button>  
 </EditForm>
-
+<br/>
+<u>
+    <a href="/favorites">lien vers les favoris</a>
+</u>
 @code {
     private string newFavorite = string.Empty;  // Champ pour le nouveau favori
     private string favoriteToRemove = string.Empty;  // Champ pour le favori à supprimer
