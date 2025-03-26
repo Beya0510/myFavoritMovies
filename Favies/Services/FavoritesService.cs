@@ -1,46 +1,50 @@
-using System.Collections.Generic;  // Importation de l'espace de noms pour utiliser les collections génériques
 
-namespace Favies.Services
+using System.Text.Json;
+using Microsoft.JSInterop;
+using Favies.Models;
+public class FavoritesService
 {
-    public class FavoritesService
+    private readonly IJSRuntime jsRuntime;
+    private const string StorageKey = "favorite_movies";
+
+    public FavoritesService(IJSRuntime jsRuntime)
     {
-        private List<string> _favorites = new List<string>();  // Liste privée pour stocker les favoris
+        this.jsRuntime = jsRuntime;
+    }
 
-        // Propriété en lecture seule pour accéder à la liste des favoris
-        public IReadOnlyList<string> Favorites => _favorites;
-
-        // Méthode pour obtenir la liste des favoris
-        public List<string> GetFavorites()
+    // Ajouter un favori et l'enregistrer dans le localStorage
+    public async Task AddFavorites(string movieTitle)
+    {
+        var favorites = await GetFavoritesAsync();
+        if (!favorites.Contains(movieTitle))
         {
-            return _favorites;  // Retourne la liste des favoris
+            favorites.Add(movieTitle);
+            await SaveFavoritesAsync(favorites);
         }
+    }
 
-        // Méthode pour ajouter un nouvel élément aux favoris
-        public void AddFavorites(string item)
+    // Supprimer un favori et mettre à jour le localStorage
+    public async Task RemoveFavorites(string movieTitle)
+    {
+        var favorites = await GetFavoritesAsync();
+        if (favorites.Contains(movieTitle))
         {
-            if (!_favorites.Contains(item))  // Vérifie si l'élément n'est pas déjà dans la liste
-            {
-                _favorites.Add(item);  // Ajoute l'élément à la liste des favoris
-            }
+            favorites.Remove(movieTitle);
+            await SaveFavoritesAsync(favorites);
         }
+    }
 
-        // Méthode pour supprimer un élément des favoris
-        public void RemoveFavorites(string item)
-        {
-            if (_favorites.Contains(item))  // Vérifie si l'élément est dans la liste des favoris
-            {
-                _favorites.Remove(item);  // Supprime l'élément de la liste des favoris
-            }
-        }
+    // Récupérer les favoris depuis le localStorage
+    public async Task<List<string>> GetFavoritesAsync()
+    {
+        var json = await jsRuntime.InvokeAsync<string>("localStorage.getItem", StorageKey);
+        return json != null ? JsonSerializer.Deserialize<List<string>>(json) ?? new List<string>() : new List<string>();
+    }
 
-        // Méthode pour modifier un élément dans les favoris
-        public void EditFavorites(string oldItem, string newItem)
-        {
-            var index = _favorites.IndexOf(oldItem);  // Trouve l'index de l'élément à modifier
-            if (index != -1)  // Vérifie si l'élément existe dans la liste
-            {
-                _favorites[index] = newItem;  // Remplace l'ancien élément par le nouveau
-            }
-        }
+    // Sauvegarder les favoris dans le localStorage
+    private async Task SaveFavoritesAsync(List<string> favorites)
+    {
+        var json = JsonSerializer.Serialize(favorites);
+        await jsRuntime.InvokeVoidAsync("localStorage.setItem", StorageKey, json);
     }
 }

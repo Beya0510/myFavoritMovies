@@ -1086,10 +1086,10 @@ C:\Git Repos\myFavoritMovies\Favies\obj\Debug\net9.0\Favies.pdb
 C:\Git Repos\myFavoritMovies\Favies\obj\Debug\net9.0\ref\Favies.dll
 C:\Git Repos\myFavoritMovies\favies\obj\Debug\net9.0\compressed\628d06xvdj-g6a1iermjy.gz
 C:\Git Repos\myFavoritMovies\favies\obj\Debug\net9.0\compressed\11183leeia-g6a1iermjy.gz
-C:\Git Repos\myFavoritMovies\Favies\bin\Debug\net9.0\wwwroot\_framework\Favies.v2fv4f1a1t.pdb
-C:\Git Repos\myFavoritMovies\Favies\bin\Debug\net9.0\wwwroot\_framework\Favies.kjdf4fi6rf.wasm
-C:\Git Repos\myFavoritMovies\Favies\bin\Debug\net9.0\wwwroot\_framework\Favies.kjdf4fi6rf.wasm.gz
-C:\Git Repos\myFavoritMovies\Favies\bin\Debug\net9.0\wwwroot\_framework\Favies.v2fv4f1a1t.pdb.gz
-C:\Git Repos\myFavoritMovies\Favies\obj\Debug\net9.0\compressed\dzqmdq9anz-kjdf4fi6rf.gz
-C:\Git Repos\myFavoritMovies\Favies\obj\Debug\net9.0\compressed\rgxv45ex3q-v2fv4f1a1t.gz
-C:\Git Repos\myFavoritMovies\Favies\obj\Debug\net9.0\compressed\2toxwor16z-vpfxt3wdyk.gz
+C:\Git Repos\myFavoritMovies\Favies\bin\Debug\net9.0\wwwroot\_framework\Favies.50wnwjw6qe.pdb
+C:\Git Repos\myFavoritMovies\Favies\bin\Debug\net9.0\wwwroot\_framework\Favies.jp3b3y0502.wasm
+C:\Git Repos\myFavoritMovies\Favies\bin\Debug\net9.0\wwwroot\_framework\Favies.jp3b3y0502.wasm.gz
+C:\Git Repos\myFavoritMovies\Favies\bin\Debug\net9.0\wwwroot\_framework\Favies.50wnwjw6qe.pdb.gz
+C:\Git Repos\myFavoritMovies\Favies\obj\Debug\net9.0\compressed\dzqmdq9anz-jp3b3y0502.gz
+C:\Git Repos\myFavoritMovies\Favies\obj\Debug\net9.0\compressed\rgxv45ex3q-50wnwjw6qe.gz
+C:\Git Repos\myFavoritMovies\Favies\obj\Debug\net9.0\compressed\2toxwor16z-cea3ivqx0g.gz

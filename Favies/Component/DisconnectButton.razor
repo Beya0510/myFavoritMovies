@@ -1,0 +1,26 @@
+﻿
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+
+<h3>Déconnexion</h3>
+
+@if (currentUser is not null)
+{
+    <p>Connecté en tant que @currentUser.Username</p>
+    <button @onclick="Logout">Déconnexion</button>
+}
+
+@code {
+    private User? currentUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        currentUser = await AuthService.GetCurrentUserAsync();
+    }
+
+    private async Task Logout()
+    {
+        await AuthService.LogoutAsync();
+        Navigation.NavigateTo("/", forceLoad: true);
+    }
+}

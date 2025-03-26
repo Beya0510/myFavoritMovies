@@ -3,7 +3,7 @@
 @inject FavoritesService FavoritesService  
 
 <h3>Favoris</h3>
-
+@*
 @if (FavoritesService.GetFavorites().Count == 0)  // Vérifie si la liste des favoris est vide
 {
     <p>Aucun favori ajouté pour le moment.</p>  
@@ -69,4 +69,4 @@ else
     {
         isEditing = false;  // Met le mode édition à faux
     }
-}
+}*@

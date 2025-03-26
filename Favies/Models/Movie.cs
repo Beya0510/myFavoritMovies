@@ -7,7 +7,8 @@ namespace Favies.Models
         public string? Genre { get; set; }
         public string? Director { get; set; }  // Le réalisateur
         public string? Plot { get; set; }  // La trame
-        public string? Poster { get; set; }  // L'affiche
+        public string? Poster { get; set; } 
+        public string? id { get; set; } 
     }
     
     
