@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Favies.Models; // Ajouter cette ligne
+using Favies.Models; 
 
 namespace Favies.Services
 {

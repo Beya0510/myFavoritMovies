@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "i++QZMkBHv0EiUka7gVZtwugioWHM9DcmMovB05rV+w=",
+  "Hash": "/V8BmwZHrYt44Hdy+GZfe9MS3q8KhwGqMlw/4EadzAg=",
   "Source": "Favies",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "3y3wda3pmj",
-      "Integrity": "BR+u3Ic3O+amzNdtVn1T6ehQRXV59far3z5ejiqJfHo=",
+      "Fingerprint": "vpfxt3wdyk",
+      "Integrity": "LcnTdcis0/CFC4L9g1RneUErGKeMtEazt43mppbm+VE=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\blazor.boot.json"
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "9kcstjnmac",
-      "Integrity": "mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE=",
+      "Fingerprint": "v2fv4f1a1t",
+      "Integrity": "6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\Favies.pdb"
@@ -220,8 +220,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "u52u06uyp5",
-      "Integrity": "cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8=",
+      "Fingerprint": "kjdf4fi6rf",
+      "Integrity": "sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\webcil\\Favies.wasm"
@@ -4742,7 +4742,7 @@
       "OriginalItemSpec": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Globalization.Calendars.wasm"
     },
     {
-      "Identity": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\2toxwor16z-3y3wda3pmj.gz",
+      "Identity": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\2toxwor16z-vpfxt3wdyk.gz",
       "SourceId": "Favies",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\",
@@ -4756,8 +4756,8 @@
       "RelatedAsset": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "fugxuat9es",
-      "Integrity": "edbZTgqIDQvvljVYdM2pqB0/aW3qV7NLPu8/KO3IQuI=",
+      "Fingerprint": "ppehzllphz",
+      "Integrity": "Q5QVmWLjy53S9hN4mReI1Z1ZP1h7PpG+zUfXvvKXJyI=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -6401,12 +6401,12 @@
       "OriginalItemSpec": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Configuration.wasm"
     },
     {
-      "Identity": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-u52u06uyp5.gz",
+      "Identity": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-kjdf4fi6rf.gz",
       "SourceId": "Favies",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/Favies#[.{fingerprint=u52u06uyp5}]!.wasm.gz",
+      "RelativePath": "_framework/Favies#[.{fingerprint=kjdf4fi6rf}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -6415,8 +6415,8 @@
       "RelatedAsset": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "l6c8e22zs6",
-      "Integrity": "reUWVNFo3Ot9B8nIHFd37vpplc8oMMOjgJYSUX0NaOQ=",
+      "Fingerprint": "zgbiaopwk3",
+      "Integrity": "k0R96/3UCQIumSrubX4uadD/8SWiZxPOustB5mYp1to=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.wasm"
@@ -8522,12 +8522,12 @@
       "OriginalItemSpec": "C:\\Git Repos\\myFavoritMovies\\Favies\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-9kcstjnmac.gz",
+      "Identity": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-v2fv4f1a1t.gz",
       "SourceId": "Favies",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/Favies#[.{fingerprint=9kcstjnmac}]!.pdb.gz",
+      "RelativePath": "_framework/Favies#[.{fingerprint=v2fv4f1a1t}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -8536,8 +8536,8 @@
       "RelatedAsset": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "dyajtx0f2e",
-      "Integrity": "Nd8zUX+74I0VzrO92YQfTaSmJm8OB+oUrbXJ8buTcDQ=",
+      "Fingerprint": "g0gf82esd2",
+      "Integrity": "0C4k6p++mQ86SSatEp5UlG9kRoQ/24dCrgIX6a8J8RQ=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.pdb"
@@ -10968,11 +10968,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"BR+u3Ic3O+amzNdtVn1T6ehQRXV59far3z5ejiqJfHo=\""
+          "Value": "\"LcnTdcis0/CFC4L9g1RneUErGKeMtEazt43mppbm+VE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10982,13 +10982,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-BR+u3Ic3O+amzNdtVn1T6ehQRXV59far3z5ejiqJfHo="
+          "Value": "sha256-LcnTdcis0/CFC4L9g1RneUErGKeMtEazt43mppbm+VE="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\2toxwor16z-3y3wda3pmj.gz",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\2toxwor16z-vpfxt3wdyk.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -11007,11 +11007,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"edbZTgqIDQvvljVYdM2pqB0/aW3qV7NLPu8/KO3IQuI=\""
+          "Value": "\"Q5QVmWLjy53S9hN4mReI1Z1ZP1h7PpG+zUfXvvKXJyI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:15:42 GMT"
+          "Value": "Wed, 26 Mar 2025 15:58:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11031,19 +11031,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"BR+u3Ic3O+amzNdtVn1T6ehQRXV59far3z5ejiqJfHo=\""
+          "Value": "W/\"LcnTdcis0/CFC4L9g1RneUErGKeMtEazt43mppbm+VE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-BR+u3Ic3O+amzNdtVn1T6ehQRXV59far3z5ejiqJfHo="
+          "Value": "sha256-LcnTdcis0/CFC4L9g1RneUErGKeMtEazt43mppbm+VE="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\2toxwor16z-3y3wda3pmj.gz",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\2toxwor16z-vpfxt3wdyk.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11060,11 +11060,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"edbZTgqIDQvvljVYdM2pqB0/aW3qV7NLPu8/KO3IQuI=\""
+          "Value": "\"Q5QVmWLjy53S9hN4mReI1Z1ZP1h7PpG+zUfXvvKXJyI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:15:42 GMT"
+          "Value": "Wed, 26 Mar 2025 15:58:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11082,7 +11082,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-edbZTgqIDQvvljVYdM2pqB0/aW3qV7NLPu8/KO3IQuI="
+          "Value": "sha256-Q5QVmWLjy53S9hN4mReI1Z1ZP1h7PpG+zUfXvvKXJyI="
         }
       ]
     },
@@ -13012,305 +13012,7 @@
       ]
     },
     {
-      "Route": "_framework/Favies.9kcstjnmac.pdb",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "35660"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "9kcstjnmac"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/Favies.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Favies.9kcstjnmac.pdb",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-9kcstjnmac.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000037713079"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "26515"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Nd8zUX+74I0VzrO92YQfTaSmJm8OB+oUrbXJ8buTcDQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "9kcstjnmac"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/Favies.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Favies.9kcstjnmac.pdb.gz",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-9kcstjnmac.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "26515"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Nd8zUX+74I0VzrO92YQfTaSmJm8OB+oUrbXJ8buTcDQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "9kcstjnmac"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/Favies.pdb.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Nd8zUX+74I0VzrO92YQfTaSmJm8OB+oUrbXJ8buTcDQ="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Favies.pdb",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "35660"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Favies.pdb",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-9kcstjnmac.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000037713079"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "26515"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Nd8zUX+74I0VzrO92YQfTaSmJm8OB+oUrbXJ8buTcDQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-mYdzNSnH+UMjjGG+hoEVAPuPPmHsT/CjyVFAZUxVJSE="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Favies.pdb.gz",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-9kcstjnmac.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "26515"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Nd8zUX+74I0VzrO92YQfTaSmJm8OB+oUrbXJ8buTcDQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Nd8zUX+74I0VzrO92YQfTaSmJm8OB+oUrbXJ8buTcDQ="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/Favies.u52u06uyp5.wasm",
+      "Route": "_framework/Favies.kjdf4fi6rf.wasm",
       "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -13320,7 +13022,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "38677"
+          "Value": "39189"
         },
         {
           "Name": "Content-Type",
@@ -13328,11 +13030,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8=\""
+          "Value": "\"sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:01 GMT"
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13342,7 +13044,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u52u06uyp5"
+          "Value": "kjdf4fi6rf"
         },
         {
           "Name": "label",
@@ -13350,18 +13052,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8="
+          "Value": "sha256-sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE="
         }
       ]
     },
     {
-      "Route": "_framework/Favies.u52u06uyp5.wasm",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-u52u06uyp5.gz",
+      "Route": "_framework/Favies.kjdf4fi6rf.wasm",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-kjdf4fi6rf.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000063954976"
+          "Quality": "0.000063629422"
         }
       ],
       "ResponseHeaders": [
@@ -13371,15 +13073,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15635"
+          "Value": "15715"
         },
         {
           "Name": "ETag",
-          "Value": "\"reUWVNFo3Ot9B8nIHFd37vpplc8oMMOjgJYSUX0NaOQ=\""
+          "Value": "\"k0R96/3UCQIumSrubX4uadD/8SWiZxPOustB5mYp1to=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13399,13 +13101,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8=\""
+          "Value": "W/\"sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u52u06uyp5"
+          "Value": "kjdf4fi6rf"
         },
         {
           "Name": "label",
@@ -13413,13 +13115,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8="
+          "Value": "sha256-sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE="
         }
       ]
     },
     {
-      "Route": "_framework/Favies.u52u06uyp5.wasm.gz",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-u52u06uyp5.gz",
+      "Route": "_framework/Favies.kjdf4fi6rf.wasm.gz",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-kjdf4fi6rf.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -13428,7 +13130,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15635"
+          "Value": "15715"
         },
         {
           "Name": "Content-Type",
@@ -13436,11 +13138,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"reUWVNFo3Ot9B8nIHFd37vpplc8oMMOjgJYSUX0NaOQ=\""
+          "Value": "\"k0R96/3UCQIumSrubX4uadD/8SWiZxPOustB5mYp1to=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13458,7 +13160,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u52u06uyp5"
+          "Value": "kjdf4fi6rf"
         },
         {
           "Name": "label",
@@ -13466,7 +13168,305 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-reUWVNFo3Ot9B8nIHFd37vpplc8oMMOjgJYSUX0NaOQ="
+          "Value": "sha256-k0R96/3UCQIumSrubX4uadD/8SWiZxPOustB5mYp1to="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Favies.pdb",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35740"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 15:59:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Favies.pdb",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-v2fv4f1a1t.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000037626519"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26576"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C4k6p++mQ86SSatEp5UlG9kRoQ/24dCrgIX6a8J8RQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Favies.pdb.gz",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-v2fv4f1a1t.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26576"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C4k6p++mQ86SSatEp5UlG9kRoQ/24dCrgIX6a8J8RQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C4k6p++mQ86SSatEp5UlG9kRoQ/24dCrgIX6a8J8RQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Favies.v2fv4f1a1t.pdb",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Favies.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35740"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 15:59:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v2fv4f1a1t"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Favies.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Favies.v2fv4f1a1t.pdb",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-v2fv4f1a1t.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000037626519"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26576"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C4k6p++mQ86SSatEp5UlG9kRoQ/24dCrgIX6a8J8RQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v2fv4f1a1t"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Favies.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6fGwPrT4Pk+i54Z56HH60Izo+Usr8dAz3JJxQEjH1vo="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Favies.v2fv4f1a1t.pdb.gz",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\rgxv45ex3q-v2fv4f1a1t.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26576"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C4k6p++mQ86SSatEp5UlG9kRoQ/24dCrgIX6a8J8RQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v2fv4f1a1t"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Favies.pdb.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C4k6p++mQ86SSatEp5UlG9kRoQ/24dCrgIX6a8J8RQ="
         }
       ]
     },
@@ -13481,7 +13481,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "38677"
+          "Value": "39189"
         },
         {
           "Name": "Content-Type",
@@ -13489,11 +13489,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8=\""
+          "Value": "\"sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:01 GMT"
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13503,18 +13503,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8="
+          "Value": "sha256-sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE="
         }
       ]
     },
     {
       "Route": "_framework/Favies.wasm",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-u52u06uyp5.gz",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-kjdf4fi6rf.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000063954976"
+          "Quality": "0.000063629422"
         }
       ],
       "ResponseHeaders": [
@@ -13524,15 +13524,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15635"
+          "Value": "15715"
         },
         {
           "Name": "ETag",
-          "Value": "\"reUWVNFo3Ot9B8nIHFd37vpplc8oMMOjgJYSUX0NaOQ=\""
+          "Value": "\"k0R96/3UCQIumSrubX4uadD/8SWiZxPOustB5mYp1to=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13552,19 +13552,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8=\""
+          "Value": "W/\"sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-cp7K6GNbCUpNUN3P0m3tUHwHxfoo8YbAHTm1gmJ++R8="
+          "Value": "sha256-sE0jyTKp74yUxlNEIgwWADTouXP9VwOky6COl52nkQE="
         }
       ]
     },
     {
       "Route": "_framework/Favies.wasm.gz",
-      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-u52u06uyp5.gz",
+      "AssetFile": "C:\\Git Repos\\myFavoritMovies\\Favies\\obj\\Debug\\net9.0\\compressed\\dzqmdq9anz-kjdf4fi6rf.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -13573,7 +13573,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15635"
+          "Value": "15715"
         },
         {
           "Name": "Content-Type",
@@ -13581,11 +13581,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"reUWVNFo3Ot9B8nIHFd37vpplc8oMMOjgJYSUX0NaOQ=\""
+          "Value": "\"k0R96/3UCQIumSrubX4uadD/8SWiZxPOustB5mYp1to=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:19:02 GMT"
+          "Value": "Wed, 26 Mar 2025 15:59:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13603,7 +13603,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-reUWVNFo3Ot9B8nIHFd37vpplc8oMMOjgJYSUX0NaOQ="
+          "Value": "sha256-k0R96/3UCQIumSrubX4uadD/8SWiZxPOustB5mYp1to="
         }
       ]
     },
