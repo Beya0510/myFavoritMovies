@@ -27,12 +27,18 @@ namespace Favies.Services
 
         public async Task LogInAsync()
         {
-            // Logique de connexion
+            await Task.Run(() =>
+            {
+                // Logique de connexion
+            });
         }
 
         public async Task LogOutAsync()
         {
-            // Logique de déconnexion
+            await Task.Run(() =>
+            {
+                // Logique de déconnexion
+            });
         }
     }
 }
