@@ -1,0 +1,57 @@
+﻿@inject AuthService AuthService
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+@*
+<div class="login-container">
+    <h3>Connexion</h3>
+    <EditForm Model="@this" OnValidSubmit="Login">
+        <DataAnnotationsValidator />
+
+        <div class="form-group">
+            <label>Email</label>
+            <InputText @bind-Value="email" class="form-control" />
+            <ValidationMessage For="@(() => email)" />
+        </div>
+
+        <div class="form-group">
+            <label>Mot de passe</label>
+            <InputText @bind-Value="password" class="form-control" type="password" />
+            <ValidationMessage For="@(() => password)" />
+        </div>
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <p class="error-message">@errorMessage</p>
+        }
+
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+    </EditForm>
+
+    <p>Pas encore de compte ?
+        <button @onclick="GoToRegister" class="btn btn-link">Inscrivez-vous ici</button>
+    </p>
+</div>
+
+@code {
+    private string email = "";
+    private string password = "";
+    private string? errorMessage;
+
+    private async Task Login()
+    {
+        bool success = await AuthService.LoginAsync(email, password);
+        if (success)
+        {
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            errorMessage = "Identifiants incorrects.";
+        }
+    }
+
+    private void GoToRegister()
+    {
+        Navigation.NavigateTo("/register"); // Remplace "/register" par la page d'inscription réelle
+    }
+}*@
