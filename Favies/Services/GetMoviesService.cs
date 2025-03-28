@@ -26,7 +26,7 @@ namespace Favies.Services
             var responseContent = await response.Content.ReadAsStringAsync();
             var searchResult = JsonSerializer.Deserialize<MovieSearchResult>(responseContent, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-            return searchResult?.Movies ?? new List<Movie>();
+            return (IEnumerable<Movie>)searchResult?.Movies ?? new List<Movie>();
         }
     }
 }

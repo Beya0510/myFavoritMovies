@@ -1,9 +1,9 @@
-﻿@page "/authentication"
+﻿@page "/login"
 @using Favies.Services
 @inject NavigationManager NavigationManager
 @inject AuthService AuthService
 
-<h3>Authentification</h3>
+
 
 @if (currentUser is not null)
 {
@@ -59,7 +59,7 @@ else
         bool success = await AuthService.LoginAsync(email, password);
         if (success)
         {
-            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/manageFavorites", forceLoad: true);
         }
         else
         {
@@ -70,7 +70,7 @@ else
     private async Task Logout()
     {
         await AuthService.LogoutAsync();
-        NavigationManager.NavigateTo("/authentication", forceLoad: true);
+        NavigationManager.NavigateTo("/", forceLoad: true);
     }
 
     private void GoToRegister()

@@ -1,6 +1,6 @@
 using System.Text.Json;
 using Microsoft.JSInterop;
-
+using Favies.Models;
 namespace Favies.Services
 {
     public class AuthService
@@ -83,6 +83,26 @@ namespace Favies.Services
             var json = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", UsersKey);
             return string.IsNullOrEmpty(json) ? new List<User>() : JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
         }
+
+        #region Gestion des favoris par utilisateur
+
+        // Récupère les favoris de l'utilisateur connecté
+        public async Task<List<Movie>> GetFavoritesAsync(User user)
+        {
+            var key = $"favorites_{user.Email}"; // La clé unique par utilisateur
+            var json = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", key);
+            return string.IsNullOrEmpty(json) ? new List<Movie>() : JsonSerializer.Deserialize<List<Movie>>(json);
+        }
+
+        // Sauvegarde les favoris de l'utilisateur connecté
+        public async Task SaveFavoritesAsync(User user, List<Movie> favorites)
+        {
+            var key = $"favorites_{user.Email}"; // La clé unique par utilisateur
+            var json = JsonSerializer.Serialize(favorites);
+            await _jsRuntime.InvokeVoidAsync("localStorage.setItem", key, json);
+        }
+
+        #endregion
     }
 
     public class User
@@ -90,4 +110,11 @@ namespace Favies.Services
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
     }
+
+    /*public class Movie
+    {
+        public object imdbID;
+        public string Title { get; set; } = string.Empty;
+        public int Year { get; set; }
+    }*/
 }

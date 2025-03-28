@@ -1,0 +1,186 @@
+﻿@page "/managefavorites"
+@using Favies.Models;
+@inject AuthService AuthService
+@inject GetMoviesService GetMoviesService
+
+<h3>🔍 Rechercher un Film</h3>
+
+<!-- Formulaire de recherche -->
+<input type="text" @bind="SearchQuery" placeholder="Entrez un titre de film..." />
+<button @onclick="SearchMovies">Rechercher</button>
+
+@if (IsLoading)
+{
+    <p>Chargement des résultats...</p>
+}
+else if (MovieData is not null && MovieData.Any())
+{
+    <div>
+        <h4>🎬 Résultats de la recherche</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Année</th>
+                <th>IMDb ID</th> <!-- Nouvelle colonne pour l'IMDb ID -->
+                <th>Favoris</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var movie in MovieData)
+            {
+                <tr>
+                    <td>@movie.Title</td>
+                    <td>@movie.Year</td>
+                    <td>@movie.imdbID</td> <!-- Affichage de l'IMDb ID -->
+                    <td>
+                        @if (currentUser is not null)
+                        {
+                            @if (!favorites.Any(m => m.Title == movie.Title))
+                            {
+                                <button @onclick="() => AddFavorite(movie)">⭐ Ajouter aux Favoris</button>
+                            }
+                            else
+                            {
+                                <button disabled>✅ Déjà en Favoris</button>
+                            }
+                        }
+                        else
+                        {
+                            <p><i>Connectez-vous pour ajouter aux favoris.</i></p>
+                        }
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div>
+        @if (CurrentPage > 1)
+        {
+            <button @onclick="PreviousPage">⬅ Précédent</button>
+        }
+
+        <span>Page @CurrentPage</span>
+
+        @if (MovieData.Count() == MoviesPerPage)
+        {
+            <button @onclick="NextPage">Suivant ➡</button>
+        }
+    </div>
+}
+else
+{
+    <p>Aucun film trouvé.</p>
+}
+
+<h3>Gérer mes favoris</h3>
+
+@if (currentUser is null)
+{
+    <p>Veuillez vous connecter pour voir et gérer vos favoris.</p>
+}
+else
+{
+    <div class="favorites-container">
+        <h4>Vos favoris</h4>
+
+        @if (favorites.Any())
+        {
+            <ul>
+                @foreach (var movie in favorites)
+                {
+                    <li>
+                        @movie.Title (@movie.Year)
+                        <button @onclick="() => RemoveFavorite(movie)" class="btn btn-danger btn-sm">Retirer</button>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>Vous n'avez aucun favori.</p>
+        }
+    </div>
+}
+
+@code {
+    public string SearchQuery = "Inception"; // Valeur par défaut
+    public bool IsLoading;
+    public int CurrentPage = 1;
+    public const int MoviesPerPage = 10;
+    public User? currentUser;
+    public IEnumerable<Movie> MovieData { get; set; } = new List<Movie>();
+    
+    private List<Movie> favorites = new List<Movie>();
+    
+    private string newMovieTitle = string.Empty;
+    private int newMovieYear;
+
+    public async Task SearchMovies()
+    {
+        if (!string.IsNullOrWhiteSpace(SearchQuery))
+        {
+            IsLoading = true;
+            MovieData = await GetMoviesService.SearchMoviesAsync(SearchQuery, CurrentPage);
+            IsLoading = false;
+        }
+    }
+
+    private async Task PreviousPage()
+    {
+        if (CurrentPage > 1)
+        {
+            CurrentPage--;
+            await SearchMovies();
+        }
+    }
+
+    private async Task NextPage()
+    {
+        CurrentPage++;
+        await SearchMovies();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Récupérer l'utilisateur actuellement connecté
+        currentUser = await AuthService.GetCurrentUserAsync();
+        
+        if (currentUser is not null)
+        {
+            // Charger les favoris de l'utilisateur
+            favorites = await AuthService.GetFavoritesAsync(currentUser);
+        }
+        await SearchMovies();
+    }
+
+    private async Task AddFavorite(Movie movie)
+    {
+        if (movie != null)
+        {
+            // Ajouter le film aux favoris
+            favorites.Add(movie);
+
+            // Sauvegarder les favoris de l'utilisateur
+            if (currentUser is not null)
+            {
+                await AuthService.SaveFavoritesAsync(currentUser, favorites);
+            }
+        }
+    }
+
+    private async Task RemoveFavorite(Movie movie)
+    {
+        // Retirer le film des favoris
+        favorites.Remove(movie);
+
+        // Sauvegarder les favoris après la suppression
+        if (currentUser is not null)
+        {
+            await AuthService.SaveFavoritesAsync(currentUser, favorites);
+        }
+    }
+}
