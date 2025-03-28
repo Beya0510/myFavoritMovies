@@ -5,8 +5,8 @@ namespace Favies.Services
 {
     public class AuthService
     {
-        private const string AuthKey = "auth_user"; // Clé de stockage pour l'utilisateur connecté
-        private const string UsersKey = "registered_users"; // Clé de stockage pour les utilisateurs inscrits
+        private const string AuthKey = "auth_user"; // Clé pour l'utilisateur connecté
+        private const string UsersKey = "registered_users"; // Clé pour les utilisateurs inscrits
         private readonly IJSRuntime _jsRuntime;
 
         public AuthService(IJSRuntime jsRuntime)
@@ -14,9 +14,9 @@ namespace Favies.Services
             _jsRuntime = jsRuntime;
         }
 
-        
+        /// <summary>
         /// Récupère l'utilisateur actuellement connecté.
-       
+        /// </summary>
         public async Task<User?> GetCurrentUserAsync()
         {
             var json = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", AuthKey);
@@ -60,6 +60,9 @@ namespace Favies.Services
             // Sauvegarde la liste des utilisateurs
             var jsonUsers = JsonSerializer.Serialize(users);
             await _jsRuntime.InvokeVoidAsync("localStorage.setItem", UsersKey, jsonUsers);
+
+            // Connecte automatiquement l'utilisateur après inscription
+            await LoginAsync(email, password);
 
             return true;
         }

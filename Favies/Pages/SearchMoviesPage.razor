@@ -181,5 +181,9 @@ else
         await SearchMovies();
     }
     
-    
+    // Méthode pour rafraîchir les favoris
+    private async Task RefreshFavorites()
+    {
+        FavoriteMovies = await FavoritesService.GetFavoritesAsync();
+    }
 }
