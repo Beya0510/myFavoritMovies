@@ -3,7 +3,6 @@
 @inject NavigationManager NavigationManager
 @inject AuthService AuthService
 
-<h3>Inscription</h3>
 
 @if (isRegistered)
 {
@@ -64,6 +63,6 @@ else
 
     private void GoToLogin()
     {
-        NavigationManager.NavigateTo("/authentication");
+        NavigationManager.NavigateTo("/manageFavorites");
     }
 }
