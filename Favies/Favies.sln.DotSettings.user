@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2219331e_002Dbec7_002D48da_002D84b5_002D9da89e696a7c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RetriveFirstOrDefaultMovie" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::E9E6E37F-2A2C-417E-AE13-44C8B6991972::net9.0::FaviesTest.MovieSearchResultTests.RetriveFirstOrDefaultMovie&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E9E6E37F-2A2C-417E-AE13-44C8B6991972::net9.0::FaviesTests.FavoriteServiceTests.AddFavorite_ShouldAddMovie_WhenNotAlreadyFavorite&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E9E6E37F-2A2C-417E-AE13-44C8B6991972::net9.0::FaviesTests.FavoriteServiceTests.AddFavorite_ShouldCallLocalStorageSetItem_WithCorrectArguments&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8f5618f3_002D9246_002D4f39_002Da062_002D92bce0d23482/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddFavorite_ShouldAddMovie_WhenNotAlreadyFavorite" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::E9E6E37F-2A2C-417E-AE13-44C8B6991972::net9.0::FaviesTests.FavoriteServiceTests.AddFavorite_ShouldAddMovie_WhenNotAlreadyFavorite&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

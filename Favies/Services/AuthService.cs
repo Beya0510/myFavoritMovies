@@ -84,7 +84,7 @@ namespace Favies.Services
             return string.IsNullOrEmpty(json) ? new List<User>() : JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
         }
 
-        #region Gestion des favoris par utilisateur
+        
 
         // Récupère les favoris de l'utilisateur connecté
         public async Task<List<Movie>> GetFavoritesAsync(User user)
@@ -102,19 +102,8 @@ namespace Favies.Services
             await _jsRuntime.InvokeVoidAsync("localStorage.setItem", key, json);
         }
 
-        #endregion
+       
     }
 
-    /*public class User
-    {
-        public string Email { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-    }*/
 
-    /*public class Movie
-    {
-        public object imdbID;
-        public string Title { get; set; } = string.Empty;
-        public int Year { get; set; }
-    }*/
 }
