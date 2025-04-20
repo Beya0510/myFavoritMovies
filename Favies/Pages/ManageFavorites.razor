@@ -2,8 +2,13 @@
 @using Favies.Models;
 @inject AuthService AuthService
 @inject GetMoviesService GetMoviesService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
-<h3>🔍 Rechercher un Film</h3>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>🔍 Rechercher un Film</h3>
+</div>
+<br/>
 
 <!-- Formulaire de recherche -->
 <input type="text" @bind="SearchQuery" placeholder="Entrez un titre de film..." />
@@ -17,12 +22,12 @@ else if (MovieData is not null && MovieData.Any())
 {
     <div>
         <h4>🎬 Résultats de la recherche</h4>
-        <table>
+        <table class="movie-table">
             <thead>
             <tr>
                 <th>Titre</th>
                 <th>Année</th>
-                <th>IMDb ID</th> <!-- Nouvelle colonne pour l'IMDb ID -->
+                <th>IMDb ID</th>
                 <th>Favoris</th>
             </tr>
             </thead>
@@ -32,7 +37,7 @@ else if (MovieData is not null && MovieData.Any())
                 <tr>
                     <td>@movie.Title</td>
                     <td>@movie.Year</td>
-                    <td>@movie.imdbID</td> <!-- Affichage de l'IMDb ID -->
+                    <td>@movie.imdbID</td>
                     <td>
                         @if (currentUser is not null)
                         {
@@ -55,6 +60,7 @@ else if (MovieData is not null && MovieData.Any())
             </tbody>
         </table>
     </div>
+    <br/>
 
     <!-- Pagination -->
     <div>
@@ -75,8 +81,11 @@ else
 {
     <p>Aucun film trouvé.</p>
 }
+<br/>
 
-<h3>Gérer mes favoris</h3>
+<div class="d-flex justify-content-between align-items-center">
+    <h3>Gérer mes favoris</h3>
+</div>
 
 @if (currentUser is null)
 {
@@ -89,20 +98,53 @@ else
 
         @if (favorites.Any())
         {
-            <ul>
+            <table class="movie-table">
+                <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Année</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
                 @foreach (var movie in favorites)
                 {
-                    <li>
-                        @movie.Title (@movie.Year)
-                        <button @onclick="() => RemoveFavorite(movie)" class="btn btn-danger btn-sm">Retirer</button>
-                    </li>
+                    <tr>
+                        <td>@movie.Title</td>
+                        <td>@movie.Year</td>
+                        <td>
+                            <button @onclick="() => RemoveFavorite(movie)" class="btn btn-danger btn-sm">Retirer</button>
+                        </td>
+                    </tr>
                 }
-            </ul>
+                </tbody>
+            </table>
         }
         else
         {
             <p>Vous n'avez aucun favori.</p>
         }
+    </div>
+}
+
+<div class="admin-actions">
+    <h4>Actions administratives</h4>
+
+    <!-- Supprimer tous les utilisateurs -->
+    <button @onclick="ConfirmDeleteAllUsers" class="btn btn-danger">Supprimer tous les utilisateurs</button>
+    <br/>
+    <br/>
+
+    <!-- Supprimer un utilisateur spécifique -->
+    <input type="text" @bind="emailToDelete" placeholder="Email de l'utilisateur à supprimer" />
+    <button @onclick="DeleteUser" class="btn btn-warning">Supprimer un utilisateur</button>
+</div>
+
+<!-- Message de succès ou d'erreur -->
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-info">
+        @message
     </div>
 }
 
@@ -113,11 +155,22 @@ else
     public const int MoviesPerPage = 10;
     public User? currentUser;
     public IEnumerable<Movie> MovieData { get; set; } = new List<Movie>();
-    
+
     private List<Movie> favorites = new List<Movie>();
-    
-    private string newMovieTitle = string.Empty;
-    private int newMovieYear;
+    private string emailToDelete = "";
+    private string message = ""; // Message de succès ou d'erreur
+
+    protected override async Task OnInitializedAsync()
+    {
+        currentUser = await AuthService.GetCurrentUserAsync();
+
+        if (currentUser is not null)
+        {
+            favorites = await AuthService.GetFavoritesAsync(currentUser);
+        }
+
+        await SearchMovies();
+    }
 
     public async Task SearchMovies()
     {
@@ -144,27 +197,12 @@ else
         await SearchMovies();
     }
 
-    protected override async Task OnInitializedAsync()
-    {
-        // Récupérer l'utilisateur actuellement connecté
-        currentUser = await AuthService.GetCurrentUserAsync();
-        
-        if (currentUser is not null)
-        {
-            // Charger les favoris de l'utilisateur
-            favorites = await AuthService.GetFavoritesAsync(currentUser);
-        }
-        await SearchMovies();
-    }
-
     private async Task AddFavorite(Movie movie)
     {
         if (movie != null)
         {
-            // Ajouter le film aux favoris
             favorites.Add(movie);
 
-            // Sauvegarder les favoris de l'utilisateur
             if (currentUser is not null)
             {
                 await AuthService.SaveFavoritesAsync(currentUser, favorites);
@@ -174,13 +212,46 @@ else
 
     private async Task RemoveFavorite(Movie movie)
     {
-        // Retirer le film des favoris
         favorites.Remove(movie);
 
-        // Sauvegarder les favoris après la suppression
         if (currentUser is not null)
         {
             await AuthService.SaveFavoritesAsync(currentUser, favorites);
+        }
+    }
+
+    // Confirmer avant de supprimer tous les utilisateurs
+    private async Task ConfirmDeleteAllUsers()
+    {
+        var confirmResult = await JSRuntime.InvokeAsync<bool>("confirm", "Êtes-vous sûr de vouloir supprimer tous les utilisateurs ?");
+        if (confirmResult)
+        {
+            await DeleteAllUsers();
+        }
+    }
+
+    // Supprimer tous les utilisateurs
+    private async Task DeleteAllUsers()
+    {
+        await AuthService.DeleteAllUsersAsync();
+        message = "Tous les utilisateurs ont été supprimés avec succès.";
+        StateHasChanged(); // Mise à jour de l'interface utilisateur
+    }
+
+    // Supprimer un utilisateur spécifique
+    private async Task DeleteUser()
+    {
+        if (!string.IsNullOrEmpty(emailToDelete))
+        {
+            await AuthService.DeleteUserAsync(emailToDelete);
+            message = $"L'utilisateur avec l'email {emailToDelete} a été supprimé avec succès.";
+            emailToDelete = ""; // Réinitialiser le champ après suppression
+            StateHasChanged(); // Mise à jour de l'interface utilisateur
+        }
+        else
+        {
+            message = "Veuillez entrer un email valide.";
+            StateHasChanged(); // Mise à jour de l'interface utilisateur
         }
     }
 }

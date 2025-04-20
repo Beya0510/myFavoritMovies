@@ -1,12 +1,24 @@
 ﻿@inherits LayoutComponentBase
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
 <div class="page">
     <div class="sidebar">
-        <NavMenu/>
+        <NavMenu />
+        @if (_isAuthenticated)
+        {
+            <button class="btn btn-danger" @onclick="Logout">Se Déconnecter</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="Login">Se Connecter</button>
+        }
     </div>
 
     <main>
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
         </div>
 
         <article class="content px-4">
@@ -14,3 +26,39 @@
         </article>
     </main>
 </div>
+
+@code {
+    private bool _isAuthenticated;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthService.AuthenticationChanged += OnAuthenticationChanged;
+        _isAuthenticated = AuthService.IsAuthenticated();
+        await AuthService.GetCurrentUserAsync();
+        StateHasChanged();
+    }
+
+    private async Task Logout()
+    {
+        await AuthService.LogoutAsync();
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void Login()
+    {
+        NavigationManager.NavigateTo("/login");
+    }
+
+    private void OnAuthenticationChanged()
+    {
+        Console.WriteLine("AuthenticationChanged event triggered."); // Vérification
+        _isAuthenticated = AuthService.IsAuthenticated();
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        AuthService.AuthenticationChanged -= OnAuthenticationChanged;
+        GC.SuppressFinalize(this);
+    }
+}

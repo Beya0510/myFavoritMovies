@@ -48,7 +48,7 @@ else
     private string? errorMessage;
     private bool isRegistered = false;
 
-    private async Task HandleRegister() // Renommé pour éviter le conflit
+    private async Task HandleRegister() 
     {
         bool success = await AuthService.RegisterAsync(email, password);
         if (success)

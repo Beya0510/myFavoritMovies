@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Favies")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dad3678aadcee4cb77062598fcb5344a6e71fbc5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f199c05431aa942534cb193199d029162c7ca160")]
 [assembly: System.Reflection.AssemblyProductAttribute("Favies")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Favies")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
