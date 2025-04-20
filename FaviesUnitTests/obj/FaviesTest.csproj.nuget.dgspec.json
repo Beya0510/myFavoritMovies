@@ -171,14 +171,6 @@
               "target": "Package",
               "version": "[9.0.4, )",
               "autoReferenced": true
-            },
-            "Mock": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
-            "Moq": {
-              "target": "Package",
-              "version": "[4.20.72, )"
             }
           },
           "imports": [

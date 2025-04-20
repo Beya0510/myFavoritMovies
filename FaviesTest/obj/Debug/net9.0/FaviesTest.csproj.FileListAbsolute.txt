@@ -1,10 +1,4 @@
 C:\Git Repos\myFavoritMovies\FaviesTest\bin\Debug\net9.0\CoverletSourceRootsMapping_FaviesTest
-C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.csproj.AssemblyReference.cache
-C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.AssemblyInfoInputs.cache
-C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.AssemblyInfo.cs
-C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.csproj.CoreCompileInputs.cache
-C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.sourcelink.json
 C:\Git Repos\myFavoritMovies\FaviesTest\bin\Debug\net9.0\testhost.dll
 C:\Git Repos\myFavoritMovies\FaviesTest\bin\Debug\net9.0\Favies.staticwebassets.runtime.json
 C:\Git Repos\myFavoritMovies\FaviesTest\bin\Debug\net9.0\Favies.staticwebassets.endpoints.json
@@ -155,6 +149,12 @@ C:\Git Repos\myFavoritMovies\FaviesTest\bin\Debug\net9.0\runtimes\win\lib\net6.0
 C:\Git Repos\myFavoritMovies\FaviesTest\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
 C:\Git Repos\myFavoritMovies\FaviesTest\bin\Debug\net9.0\Favies.dll
 C:\Git Repos\myFavoritMovies\FaviesTest\bin\Debug\net9.0\Favies.pdb
+C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.csproj.AssemblyReference.cache
+C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.AssemblyInfoInputs.cache
+C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.AssemblyInfo.cs
+C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.csproj.CoreCompileInputs.cache
+C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.sourcelink.json
 C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.csproj.Up2Date
 C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\FaviesTest.dll
 C:\Git Repos\myFavoritMovies\FaviesTest\obj\Debug\net9.0\refint\FaviesTest.dll
