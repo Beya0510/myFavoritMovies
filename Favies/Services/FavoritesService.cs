@@ -31,7 +31,7 @@ public class FavoritesService
         }
     }
 
-    private async Task RemoveFavorite(Movie movie)
+    public async Task RemoveFavorite(Movie movie)
     {
         // Retirer le film des favoris
         favorites.Remove(movie);
