@@ -6,6 +6,8 @@ html, body {
 
 body {
     overflow-y: auto; /* Enable vertical scrolling when content overflows */
+    dispolay: flex;
+    flex-direction: column; /* Allow for flexible layout */
 }
 
 h1:focus {
@@ -28,7 +30,7 @@ a, .btn-link {
 
 .content {
     padding-top: 1.1rem;
-    min-height: calc(100vh - 50px); /* Ensure content takes at least the full viewport height minus some offset */
+    flex: 1; /* Ajout pour que le contenu principal occupe l'espace disponible */
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -145,4 +147,11 @@ code {
 .movie-table tbody td {
     padding-top: 5px;    /* Reduced from 8px by 10% */
     padding-bottom: 5px; /* Reduced from 8px by 10% */
+}
+
+.admin-supression{
+    margin-top: 450px; /* Pousse cet élément vers le bas */
+    padding-bottom: 20px ;  /* Ajoute un peu d'espace autour du bouton */
+    Text-align: left; /* Centre le bouton horizontalement */
+    padding-bottom: 20px;
 }

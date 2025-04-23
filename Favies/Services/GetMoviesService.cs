@@ -2,7 +2,6 @@ using System.Text.Json;
 using Favies.Models;
 
 
-
 namespace Favies.Services
 {
     public class GetMoviesService

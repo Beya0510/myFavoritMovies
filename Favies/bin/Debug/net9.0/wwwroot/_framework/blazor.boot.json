@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Favies",
   "resources": {
-    "hash": "sha256-otTimiAloqSKYytqArc9q6GSC0+bR7QGIyjlc7EjUW0=",
+    "hash": "sha256-Hpz6L2Lud1fUnNniYr5g0EM21kU4OL0x7ZQngeiAKWo=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.da83xzpz5r.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.vmzb2angnn.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -203,8 +203,8 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "Favies.vos7p2yxw6.wasm": "Favies.wasm",
-      "Favies.nt67xbedyu.pdb": "Favies.pdb"
+      "Favies.d8znrlxeks.wasm": "Favies.wasm",
+      "Favies.vr9meiuimh.pdb": "Favies.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.hvg7u8bimp.js": "sha256-LX9rFEWGVxhkOkAVPG0w5RxPwzPBlEUz6dQNjWS7M+M="
@@ -416,10 +416,10 @@
       "WindowsBase.5lai2eowco.wasm": "sha256-GcDi5293y2A7oSiFYTbBTUe0d+ISbvgeel4ZNd8KkPM=",
       "mscorlib.wzkfrp7u5k.wasm": "sha256-9PjsU0gaxxz5Vyw++p9DeYUWLsaXbaMS2RbX6wmTUmk=",
       "netstandard.d82br99ghv.wasm": "sha256-DS8keXxU4eQpa1kIoiFxOA2Ii2g9hoNWSaVi8F8AnIE=",
-      "Favies.vos7p2yxw6.wasm": "sha256-/+2ZtJeeARc9WXeAnUmOKqFVPa3Eylt63V71DCXdZHw="
+      "Favies.d8znrlxeks.wasm": "sha256-HRHR74jR2jcpzyduoWfY9cY1sKzHjiWVU724WmrBRmg="
     },
     "pdb": {
-      "Favies.nt67xbedyu.pdb": "sha256-tfRxmXGEF9bjDLGvGu75dtDq+qdJTD1x88d+NY1Ds6o="
+      "Favies.vr9meiuimh.pdb": "sha256-+5DE/R/ZyQkWZfy8Rm4UIXQnZRt1Tgj5CID3AxZAwCg="
     }
   },
   "cacheBootResources": true,

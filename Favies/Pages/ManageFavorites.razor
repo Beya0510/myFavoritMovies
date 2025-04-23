@@ -8,12 +8,12 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h3>🔍 Rechercher un Film</h3>
 </div>
-<br/>
+
 
 <!-- Formulaire de recherche -->
 <input type="text" @bind="SearchQuery" placeholder="Entrez un titre de film..." />
 <button @onclick="SearchMovies">Rechercher</button>
-
+<br/><br/>
 @if (IsLoading)
 {
     <p>Chargement des résultats...</p>
@@ -41,7 +41,7 @@ else if (MovieData is not null && MovieData.Any())
                     <td>
                         @if (currentUser is not null)
                         {
-                            @if (!favorites.Any(m => m.Title == movie.Title))
+                            @if (!favorites.Any(m => m.imdbID == movie.imdbID))
                             {
                                 <button @onclick="() => AddFavorite(movie)">⭐ Ajouter aux Favoris</button>
                             }
@@ -103,6 +103,7 @@ else
                 <tr>
                     <th>Titre</th>
                     <th>Année</th>
+                    <th>IMDb ID</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -112,6 +113,7 @@ else
                     <tr>
                         <td>@movie.Title</td>
                         <td>@movie.Year</td>
+                        <td>@movie.imdbID</td>
                         <td>
                             <button @onclick="() => RemoveFavorite(movie)" class="btn btn-danger btn-sm">Retirer</button>
                         </td>
@@ -127,18 +129,6 @@ else
     </div>
 }
 
-<div class="admin-actions">
-    <h4>Actions administratives</h4>
-
-    <!-- Supprimer tous les utilisateurs -->
-    <button @onclick="ConfirmDeleteAllUsers" class="btn btn-danger">Supprimer tous les utilisateurs</button>
-    <br/>
-    <br/>
-
-    <!-- Supprimer un utilisateur spécifique -->
-    <input type="text" @bind="emailToDelete" placeholder="Email de l'utilisateur à supprimer" />
-    <button @onclick="DeleteUser" class="btn btn-warning">Supprimer un utilisateur</button>
-</div>
 
 <!-- Message de succès ou d'erreur -->
 @if (!string.IsNullOrEmpty(message))
@@ -220,38 +210,5 @@ else
         }
     }
 
-    // Confirmer avant de supprimer tous les utilisateurs
-    private async Task ConfirmDeleteAllUsers()
-    {
-        var confirmResult = await JSRuntime.InvokeAsync<bool>("confirm", "Êtes-vous sûr de vouloir supprimer tous les utilisateurs ?");
-        if (confirmResult)
-        {
-            await DeleteAllUsers();
-        }
-    }
-
-    // Supprimer tous les utilisateurs
-    private async Task DeleteAllUsers()
-    {
-        await AuthService.DeleteAllUsersAsync();
-        message = "Tous les utilisateurs ont été supprimés avec succès.";
-        StateHasChanged(); // Mise à jour de l'interface utilisateur
-    }
-
-    // Supprimer un utilisateur spécifique
-    private async Task DeleteUser()
-    {
-        if (!string.IsNullOrEmpty(emailToDelete))
-        {
-            await AuthService.DeleteUserAsync(emailToDelete);
-            message = $"L'utilisateur avec l'email {emailToDelete} a été supprimé avec succès.";
-            emailToDelete = ""; // Réinitialiser le champ après suppression
-            StateHasChanged(); // Mise à jour de l'interface utilisateur
-        }
-        else
-        {
-            message = "Veuillez entrer un email valide.";
-            StateHasChanged(); // Mise à jour de l'interface utilisateur
-        }
-    }
+    
 }

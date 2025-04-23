@@ -1,0 +1,65 @@
+﻿@page "/adminlogin"
+@using System.Text.Json
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+<h3>Admin Login</h3>
+
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <div class="alert alert-danger">
+        @ErrorMessage
+    </div>
+}
+
+<div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" class="form-control" @bind="Email" />
+</div>
+
+<div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" class="form-control" @bind="Password" />
+</div>
+
+<button class="btn btn-primary" @onclick="Login">Login</button>
+<button class="btn btn-success" @onclick="Register">Register</button>
+
+@code {
+    private string Email = "";
+    private string Password = "";
+    private string? ErrorMessage;
+
+    private async Task Login()
+    {
+        var user = await AuthService.AuthenticateAsync(Email, Password);
+
+        if (user != null && user.Role == "Admin")
+        {
+            await JSRuntime.InvokeVoidAsync("localStorage.setItem", "auth_user", JsonSerializer.Serialize(user));
+
+            var storedUser = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "auth_user");
+            Console.WriteLine("User in localStorage: " + storedUser);
+
+            Navigation.NavigateTo("/administration", forceLoad: true);
+        }
+        else
+        {
+            ErrorMessage = "Invalid login attempt. Please use an admin account.";
+        }
+    }
+
+    private async Task Register()
+    {
+        var result = await AuthService.RegisterAsync(Email, Password);
+        if (result)
+        {
+            Navigation.NavigateTo("/adminlogin");
+        }
+        else
+        {
+            ErrorMessage = "Registration failed. Email may be already in use.";
+        }
+    }
+}

@@ -1,7 +1,14 @@
-﻿namespace Favies.Models;
-
-public class User
+﻿namespace Favies.Models
 {
-    public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
+    public class User
+    {
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string Role { get; set; } 
+    }
+    public enum Role
+    {
+        Admin,
+        User
+    }
 }

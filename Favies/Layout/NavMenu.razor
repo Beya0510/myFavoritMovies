@@ -1,5 +1,4 @@
-﻿@using Favies.Pages
-@inject NavigationManager NavigationManager
+﻿@inject NavigationManager NavigationManager
 @inject AuthService AuthService
 
 <div class="top-row ps-3 navbar navbar-dark">
@@ -24,13 +23,19 @@
             </NavLink>
         </div>
 
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/administration">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Administration
+            </NavLink>
+        </div>
+
         @if (!_isLoading)
         {
             @if (!_isAuthenticated)
             {
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="/login">
-                        <span class="bi bi-person-plus-fill-nav-menu" aria-hidden="true"></span> Connection
+                        <span class="bi bi-person-plus-fill-nav-menu" aria-hidden="true" @onclick="Login"></span> Connect
                     </NavLink>
                 </div>
             }
@@ -38,7 +43,7 @@
             {
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="/" @onclick="Logout">
-                        <span class="bi bi-person-dash-fill-nav-menu" aria-hidden="true"></span> Déconnexion
+                        <span class="bi bi-person-dash-fill-nav-menu" aria-hidden="true" @onclick="Logout"></span> Disconnect
                     </NavLink>
                 </div>
             }
@@ -73,15 +78,24 @@
         NavigationManager.NavigateTo("/");
     }
 
-    private void OnAuthenticationChanged()
-    {
-        _isAuthenticated = AuthService.IsAuthenticated();
-        InvokeAsync(StateHasChanged);
-    }
-
-    public void Dispose()
+   public void Dispose()
     {
         AuthService.AuthenticationChanged -= OnAuthenticationChanged;
         GC.SuppressFinalize(this);
     }
+
+    private void Login()
+        {
+            NavigationManager.NavigateTo("/login");
+        }
+
+    private void OnAuthenticationChanged()
+        {
+            Console.WriteLine("AuthenticationChanged event triggered."); // Vérification
+            _isAuthenticated = AuthService.IsAuthenticated();
+            StateHasChanged();
+        }
+
+    
+    
 }

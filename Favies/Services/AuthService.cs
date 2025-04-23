@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections;
 using System.Text.Json;
 using Microsoft.JSInterop;
 using Favies.Models;
@@ -8,9 +8,11 @@ namespace Favies.Services;
 public class AuthService
 {
     private const string AuthKey = "auth_user";
+    private const string AdminAuthKey = "auth_admin";
     private const string UsersKey = "registered_users";
     private readonly IJSRuntime _jsRuntime;
     private User? _currentUser;
+    private User? _currentAdmin;
 
     public event Action? AuthenticationChanged;
 
@@ -25,6 +27,14 @@ public class AuthService
         var json = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", AuthKey);
         _currentUser = string.IsNullOrEmpty(json) ? null : JsonSerializer.Deserialize<User>(json);
         return _currentUser;
+    }
+
+    // Récupère l'utilisateur admin actuellement connecté.
+    public async Task<User?> GetCurrentAdminAsync()
+    {
+        var json = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", AdminAuthKey);
+        _currentAdmin = string.IsNullOrEmpty(json) ? null : JsonSerializer.Deserialize<User>(json);
+        return _currentAdmin;
     }
 
     // Vérifie les identifiants et connecte l'utilisateur.
@@ -45,6 +55,24 @@ public class AuthService
         return false;
     }
 
+    // Authentifie un utilisateur en tant qu'admin.
+    public async Task<User?> AuthenticateAsync(string email, string password)
+    {
+        var users = await GetRegisteredUsersAsync();
+        var user = users.FirstOrDefault(u => u.Email == email && u.Password == password && u.Role == "Admin");
+
+        if (user != null)
+        {
+            var json = JsonSerializer.Serialize(user);
+            await _jsRuntime.InvokeVoidAsync("localStorage.setItem", AdminAuthKey, json);
+            _currentAdmin = user;
+            NotifyAuthenticationChanged();
+            return user;
+        }
+
+        return null;
+    }
+
     // Inscrit un nouvel utilisateur et le stocke dans `localStorage`.
     public async Task<bool> RegisterAsync(string email, string password)
     {
@@ -56,15 +84,24 @@ public class AuthService
             return false;
         }
 
-        var newUser = new User { Email = email, Password = password };
-        users.Add(newUser);
+        // Vérifie si un administrateur existe déjà
+        var existingAdmin = users.FirstOrDefault(u => u.Role == "Admin");
 
-        // Sauvegarde la liste des utilisateurs
+        // Si aucun administrateur n'existe, on assigne le rôle "Admin" au premier utilisateur
+        if (existingAdmin == null)
+        {
+            var adminUser = new User { Email = email, Password = password, Role = "Admin" };
+            users.Add(adminUser);
+        }
+        else
+        {
+            // Si un administrateur existe déjà, on assigne le rôle "User" aux nouveaux utilisateurs
+            var newUser = new User { Email = email, Password = password, Role = "User" };
+            users.Add(newUser);
+        }
+
         var jsonUsers = JsonSerializer.Serialize(users);
         await _jsRuntime.InvokeVoidAsync("localStorage.setItem", UsersKey, jsonUsers);
-
-        // Connecte automatiquement l'utilisateur après inscription
-        await LoginAsync(email, password);
 
         return true;
     }
@@ -74,6 +111,14 @@ public class AuthService
     {
         await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", AuthKey);
         _currentUser = null;
+        NotifyAuthenticationChanged();
+    }
+
+    // Déconnecte l'admin.
+    public async Task LogoutAdminAsync()
+    {
+        await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", AdminAuthKey);
+        _currentAdmin = null;
         NotifyAuthenticationChanged();
     }
 
@@ -150,5 +195,11 @@ public class AuthService
     private void NotifyAuthenticationChanged()
     {
         AuthenticationChanged?.Invoke();
+    }
+
+    public async Task<IEnumerable> GetAllUsersAsync()
+    {
+        var json = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", UsersKey);
+        return string.IsNullOrEmpty(json) ? new List<User>() : JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
     }
 }

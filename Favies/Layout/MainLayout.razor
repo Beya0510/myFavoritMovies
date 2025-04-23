@@ -5,15 +5,8 @@
 
 <div class="page">
     <div class="sidebar">
-        <NavMenu />
-        @if (_isAuthenticated)
-        {
-            <button class="btn btn-danger" @onclick="Logout">Se Déconnecter</button>
-        }
-        else
-        {
-            <button class="btn btn-primary" @onclick="Login">Se Connecter</button>
-        }
+        <NavMenu/>
+       
     </div>
 
     <main>
@@ -38,17 +31,7 @@
         StateHasChanged();
     }
 
-    private async Task Logout()
-    {
-        await AuthService.LogoutAsync();
-        NavigationManager.NavigateTo("/");
-    }
-
-    private void Login()
-    {
-        NavigationManager.NavigateTo("/login");
-    }
-
+ 
     private void OnAuthenticationChanged()
     {
         Console.WriteLine("AuthenticationChanged event triggered."); // Vérification

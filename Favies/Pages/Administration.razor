@@ -1,0 +1,120 @@
+﻿@page "/administration"
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+@using Favies.Models
+
+<PageTitle>Administration</PageTitle>
+
+<h3>Gestion des Utilisateurs</h3>
+
+<br/>
+<br/>
+@if (_isAuthenticated && _isAdmin)
+{
+    <div class="admin-actions">
+        <br/>
+        <br/>
+
+        <!-- Affichage du message d'alerte -->
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="alert alert-info">
+                @message
+            </div>
+        }
+
+
+        <div>
+        <!-- Liste les utilisateurs du local storage -->
+        <h4>Liste des utilisateurs</h4>
+        <ul>
+            @foreach (var user in users)
+            {
+                <li>@user.Email - @user.Role</li>
+            }
+        </ul>
+            </div>
+        <!-- Supprimer un utilisateur spécifique -->
+        <div>
+            <input type="text" @bind="emailToDelete" placeholder="Email de l'utilisateur à supprimer" />
+            <button @onclick="DeleteUser" class="btn btn-warning">Supprimer un utilisateur</button>
+        </div>
+        <br/>
+        
+        <!-- Supprimer tous les utilisateurs -->
+        <div class="admin-supression">
+             <button @onclick="ConfirmDeleteAllUsers" class="btn btn-danger">Supprimer tous les utilisateurs</button>
+        </div>
+        <br/>
+        
+    </div>
+}
+else
+{
+    <p>Accès refusé. Vous devez être authentifié en tant qu'administrateur pour accéder à cette page.</p>
+}
+
+@code {
+    private bool _isAuthenticated;
+    private bool _isAdmin;
+    private string? message;
+    private string emailToDelete = "";
+    private List<User> users = new List<User>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var currentUser = await AuthService.GetCurrentUserAsync();
+        _isAuthenticated = currentUser != null;  // Vérifie si l'utilisateur est authentifié
+
+        if (_isAuthenticated)
+        {
+            _isAdmin = currentUser.Role == Role.Admin.ToString(); 
+            if (_isAdmin)
+            {
+                users = (await AuthService.GetAllUsersAsync()).Cast<User>().ToList();
+                Navigation.NavigateTo("/administration");
+            }
+        }
+        
+       StateHasChanged();
+    }
+
+    private async Task ConfirmDeleteAllUsers()
+    {
+        var confirmResult = await JSRuntime.InvokeAsync<bool>("confirm", "Êtes-vous sûr de vouloir supprimer tous les utilisateurs ?");
+        if (confirmResult)
+        {
+            await DeleteAllUsers();
+        }
+    }
+
+    private async Task DeleteAllUsers()
+    {
+        await AuthService.DeleteAllUsersAsync();
+        message = "Tous les utilisateurs ont été supprimés avec succès.";
+        StateHasChanged();
+    }
+
+    private async Task DeleteUser()
+    {
+        if (!string.IsNullOrEmpty(emailToDelete))
+        {
+            await AuthService.DeleteUserAsync(emailToDelete);
+            message = $"L'utilisateur avec l'email {emailToDelete} a été supprimé avec succès.";
+            emailToDelete = "";
+            StateHasChanged();
+        }
+        else
+        {
+            message = "Veuillez entrer un email valide.";
+            StateHasChanged();
+        }
+    }
+
+    private async Task LogoutAdmin()
+    {
+        await AuthService.LogoutAdminAsync();
+        Navigation.NavigateTo("/");
+    }
+}
