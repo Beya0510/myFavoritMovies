@@ -24,6 +24,7 @@ Favies est une application web construite avec Blazor qui permet aux utilisateur
     -   Un navigateur web moderne
 
 2.  **Cloner le dépôt :**
+    **⚠️ Veuillez utiliser la branche `develop` pour le développement et les tests.**
 
     ```bash
     git clone https://github.com/Beya0510/myFavoritMovies.git
@@ -47,5 +48,39 @@ Favies est une application web construite avec Blazor qui permet aux utilisateur
     ```bash
     dotnet run
     ```
+------
 
-    L'application démarrera et vous pourrez y accéder via votre navigateur web à l'URL spécifiée (généralement `http://localhost:5000`).
+# FaviesTest
+
+## Description
+
+FaviesTest est un projet de test pour l'application Favies. Il contient des tests unitaires pour les différents services de l'application, tels que `GetMoviesService`.
+
+## Tests
+
+-   `GetMoviesServiceTests.cs`: Contient les tests unitaires pour la classe `GetMoviesService`.
+-   `AuthServiceTests.cs`: Contient les tests unitaires pour la classe `AuthService`.
+-   `MovieSearchResultTests.cs`: Contient les tests unitaires pour la classe `MovieSearchResult`.
+
+## Comment exécuter les tests
+
+Pour exécuter les tests, vous pouvez utiliser l'IDE JetBrains Rider ou la ligne de commande avec la commande `dotnet test`.
+
+### Prérequis
+
+-   [.NET SDK](https://dotnet.microsoft.com/download) (version 9.0)
+
+### Étapes
+
+1.  Ouvrez le projet dans JetBrains Rider ou un autre IDE compatible avec .NET.
+2.  Exécutez les tests via l'interface de l'IDE ou en utilisant la commande `dotnet test` dans le répertoire du projet.
+
+## Dépendances
+
+Le projet utilise les dépendances suivantes :
+
+-   xUnit
+-   Moq
+-   Microsoft.NET.Test.Sdk
+
+Ces dépendances sont définies dans le fichier `.csproj` du projet.
