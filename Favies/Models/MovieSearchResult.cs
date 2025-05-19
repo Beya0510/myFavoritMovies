@@ -12,5 +12,7 @@ namespace Favies.Models
 
         [JsonPropertyName("Response")]
         public string Response { get; set; } = "False";
+        
+        
     }
 }

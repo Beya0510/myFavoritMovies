@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iiF+yn68McY=",
+  "dgSpecHash": "Wc0osxr5ZP4=",
   "success": true,
   "projectFilePath": "C:\\Git Repos\\myFavoritMovies\\Favies\\Favies.csproj",
   "expectedPackageFiles": [
@@ -30,9 +30,9 @@
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.3\\microsoft.extensions.primitives.9.0.3.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.jsinterop\\9.0.3\\microsoft.jsinterop.9.0.3.nupkg.sha512",
     "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.jsinterop.webassembly\\9.0.3\\microsoft.jsinterop.webassembly.9.0.3.nupkg.sha512",
-    "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.4\\microsoft.net.illink.tasks.9.0.4.nupkg.sha512",
-    "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.4\\microsoft.net.sdk.webassembly.pack.9.0.4.nupkg.sha512",
-    "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.4\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.4.nupkg.sha512"
+    "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.5\\microsoft.net.illink.tasks.9.0.5.nupkg.sha512",
+    "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.5\\microsoft.net.sdk.webassembly.pack.9.0.5.nupkg.sha512",
+    "C:\\Users\\Jean-MarieBEYAMULUMB\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.5\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.5.nupkg.sha512"
   ],
   "logs": []
 }

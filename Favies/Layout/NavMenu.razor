@@ -85,17 +85,14 @@
     }
 
     private void Login()
-        {
-            NavigationManager.NavigateTo("/login");
-        }
+    {
+        NavigationManager.NavigateTo("/login");
+    }
 
     private void OnAuthenticationChanged()
-        {
-            Console.WriteLine("AuthenticationChanged event triggered."); // Vérification
-            _isAuthenticated = AuthService.IsAuthenticated();
-            StateHasChanged();
-        }
-
-    
-    
+    {
+        Console.WriteLine("AuthenticationChanged event triggered."); // Vérification
+        _isAuthenticated = AuthService.IsAuthenticated();
+        StateHasChanged();
+    }
 }

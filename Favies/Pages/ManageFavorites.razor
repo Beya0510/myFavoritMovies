@@ -3,12 +3,10 @@
 @inject AuthService AuthService
 @inject GetMoviesService GetMoviesService
 @inject NavigationManager NavigationManager
-@inject IJSRuntime JSRuntime
 
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h3>🔍 Rechercher un Film</h3>
 </div>
-
 
 <!-- Formulaire de recherche -->
 <input type="text" @bind="SearchQuery" placeholder="Entrez un titre de film..." />
@@ -76,6 +74,9 @@ else if (MovieData is not null && MovieData.Any())
             <button @onclick="NextPage">Suivant ➡</button>
         }
     </div>
+    <div>
+        <span>Page @TotalPage</span>
+    </div>
 }
 else
 {
@@ -115,6 +116,7 @@ else
                         <td>@movie.Year</td>
                         <td>@movie.imdbID</td>
                         <td>
+                            <button @onclick="() => EditFavorite(movie)" class="btn btn-primary btn-sm">Modifier</button>
                             <button @onclick="() => RemoveFavorite(movie)" class="btn btn-danger btn-sm">Retirer</button>
                         </td>
                     </tr>
@@ -127,8 +129,21 @@ else
             <p>Vous n'avez aucun favori.</p>
         }
     </div>
-}
 
+    @if (IsEditing && SelectedFavorite is not null)
+    {
+        <div class="edit-form">
+            <h4>Modifier le favori</h4>
+            <label>Titre :</label>
+            <input type="text" @bind="SelectedFavorite.Title" />
+            <label>Année :</label>
+            <input type="text" @bind="SelectedFavorite.Year" />
+            <br />
+            <button @onclick="SaveFavorite" class="btn btn-success btn-sm">Enregistrer</button>
+            <button @onclick="CancelEdit" class="btn btn-secondary btn-sm">Annuler</button>
+        </div>
+    }
+}
 
 <!-- Message de succès ou d'erreur -->
 @if (!string.IsNullOrEmpty(message))
@@ -145,10 +160,12 @@ else
     public const int MoviesPerPage = 10;
     public User? currentUser;
     public IEnumerable<Movie> MovieData { get; set; } = new List<Movie>();
+    public object TotalPage { get; set; }
 
     private List<Movie> favorites = new List<Movie>();
-    private string emailToDelete = "";
     private string message = ""; // Message de succès ou d'erreur
+    private bool IsEditing = false;
+    private Movie? SelectedFavorite;
 
     protected override async Task OnInitializedAsync()
     {
@@ -210,5 +227,40 @@ else
         }
     }
 
-    
+    private void EditFavorite(Movie movie)
+    {
+        SelectedFavorite = new Movie
+        {
+            Title = movie.Title,
+            Year = movie.Year,
+            imdbID = movie.imdbID
+        };
+        IsEditing = true;
+    }
+
+    private async Task SaveFavorite()
+    {
+        if (SelectedFavorite != null)
+        {
+            var favorite = favorites.FirstOrDefault(m => m.imdbID == SelectedFavorite.imdbID);
+            if (favorite != null)
+            {
+                favorite.Title = SelectedFavorite.Title;
+                favorite.Year = SelectedFavorite.Year;
+
+                if (currentUser is not null)
+                {
+                    await AuthService.SaveFavoritesAsync(currentUser, favorites);
+                }
+            }
+        }
+        IsEditing = false;
+        SelectedFavorite = null;
+    }
+
+    private void CancelEdit()
+    {
+        IsEditing = false;
+        SelectedFavorite = null;
+    }
 }

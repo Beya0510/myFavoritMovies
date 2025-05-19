@@ -36,12 +36,14 @@ public class FavoritesService
         // Retirer le film des favoris
         favorites.Remove(movie);
 
-        // Sauvegarder les favoris après la suppression
+        // Sauvegarder les favoris 
         if (currentUser is not null)
         {
             await authService.SaveFavoritesAsync(currentUser, favorites);
         }
     }
+    
+    
     // Récupérer les favoris depuis le localStorage
     public async Task<List<string>> GetFavoritesAsync()
     {

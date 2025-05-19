@@ -2,12 +2,13 @@ using System.Text.Json;
 using Favies.Models;
 
 
+
 namespace Favies.Services
 {
     public class GetMoviesService
     {
         private readonly HttpClient _httpClient;
-        private const string ApiKey = "d0c9b0d0"; // Remplacez par votre clé API valide
+        private const string ApiKey = "d0c9b0d0"; 
         private const string BaseUrl = "https://www.omdbapi.com/";
 
         public GetMoviesService(HttpClient httpClient)
@@ -26,5 +27,6 @@ namespace Favies.Services
 
             return (IEnumerable<Movie>)searchResult?.Movies ?? new List<Movie>();
         }
+        
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Text.Json;
 using Microsoft.JSInterop;
 using Favies.Models;
@@ -197,7 +196,7 @@ public class AuthService
         AuthenticationChanged?.Invoke();
     }
 
-    public async Task<IEnumerable> GetAllUsersAsync()
+    public async Task<IEnumerable<User>> GetAllUsersAsync()
     {
         var json = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", UsersKey);
         return string.IsNullOrEmpty(json) ? new List<User>() : JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
